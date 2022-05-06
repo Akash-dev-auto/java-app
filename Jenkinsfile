@@ -1,22 +1,17 @@
 pipeline {
      agent any
      stages {
-             stage('INIT') {
+             stage('build application') {
 	           steps  {
-	        	echo ' my name is akash and i am learning devops '
+	        	mvn clean package
 		   }
-             }
-	     stage('BUILD') {
-	            steps {
-		        echo 'building sample project'
-		    }
-             }
-	     stage('DEPLOY') {
-	             steps {
-			   echo "deployed in staging area"
+		     post{
+			     success{
+				     archiveArtifacts artifacts: '**/*.war'
+			     }
 		     }
+               }
 
-	     }
       }
 }
 
