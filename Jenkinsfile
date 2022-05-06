@@ -1,4 +1,3 @@
-# Demo jenkins file written for DSL
 pipeline {
      agent any
      stages {
