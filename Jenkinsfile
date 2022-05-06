@@ -17,7 +17,8 @@ pipeline {
 	       }
 	        stage('deploy in staging environment'){	
 			steps {
-			     timeout(time:5, units:'DAYS')	                     
+			     timeout(time:5, units:'DAYS')
+			     input message: 'approve or deny'
 	                }
 			build job: 'package_deployment'
 
