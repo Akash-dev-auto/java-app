@@ -20,7 +20,9 @@ pipeline {
 			     timeout(time:5, unit:'DAYS')
 			     input message: 'approve or deny'
 	                }
-			build job: 'package_deployment'
+			steps {
+			     build job: 'package_deployment'
+			}
 
                  }
 
