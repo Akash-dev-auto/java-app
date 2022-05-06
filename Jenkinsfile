@@ -17,8 +17,9 @@ pipeline {
 	       }
 	        stage('deploy in staging environment'){	
 			steps {
-	                     build job: 'package_deployment'
+			     timeout(time:5, units:'DAYS')	                     
 	                }
+			build job: 'package_deployment'
 
                  }
 
