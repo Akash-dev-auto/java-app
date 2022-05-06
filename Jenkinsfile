@@ -6,7 +6,7 @@ pipeline {
 	        	echo ' my name is akash and i am learning devops '
 		   }
              }
-	     stage{'BUILD') {
+	     stage('BUILD') {
 	            steps {
 		        echo 'building sample project'
 		    }
